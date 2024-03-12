@@ -6,7 +6,7 @@ const chatInputForm = document.querySelector('.chat-input-form')
 const chatInput = document.querySelector('.chat-input')
 const clearChatBtn = document.querySelector('.clear-chat-button')
 
-const chatMessageElement = (message) => `
+const createChatMessageElement = (message) => `
         <div class="message ${message.sender === 'Abuoma' ? 'blue-bg' : 'gray-bg'}">
             <div class="message-sender">${message.sender}</div>
             <div class="message-text">${message.text}</div>
@@ -29,6 +29,8 @@ const chatMessageElement = (message) => `
                 psalmsungSelectorBtn.classList.add('active-person')
                 abuomaSelectorBtn.classList.remove('active-person')
             }
+
+            chatInput.focus()
         }
 
 
@@ -36,12 +38,17 @@ const chatMessageElement = (message) => `
         psalmsungSelectorBtn.onclick = () => updateMessageSender('Psalmsung')
 
         const sendMessage = (e) => {
-            e.preventDefault()
-
-            const timestamp = new Date().toLocaleString('en-Us', {hour: 'numeric', minute: 'numeric',})
-            const message = {
-                sender: '',
-                text: chatInput.Value,
-                timestamp,
-            }
-        }
+    e.preventDefault(); // Prevent form submission default behavior
+    
+    const timestamp = new Date().toLocaleString('en-Us', {hour: 'numeric', minute: 'numeric', hour12: true});
+    const message = {
+        sender: messageSender,
+        text: chatInput.value,
+        timestamp,
+    };
+    localStorage.setItem('messages', JSON.stringfy(message))
+    chatMessages.innerHTML += createChatMessageElement(message);
+    chatInput.value = ''; 
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+};
+        chatInputForm.addEventListener('submit', sendMessage);
