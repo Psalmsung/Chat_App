@@ -38,17 +38,17 @@ const createChatMessageElement = (message) => `
         psalmsungSelectorBtn.onclick = () => updateMessageSender('Psalmsung')
 
         const sendMessage = (e) => {
-    e.preventDefault(); // Prevent form submission default behavior
-    
-    const timestamp = new Date().toLocaleString('en-Us', {hour: 'numeric', minute: 'numeric', hour12: true});
-    const message = {
-        sender: messageSender,
-        text: chatInput.value,
-        timestamp,
-    };
-    localStorage.setItem('messages', JSON.stringfy(message))
-    chatMessages.innerHTML += createChatMessageElement(message);
-    chatInput.value = ''; 
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-};
-        chatInputForm.addEventListener('submit', sendMessage);
+            e.preventDefault()
+
+            const timestamp = new Date().toLocaleString('en-Us', {hour: 'numeric', minute: 'numeric',})
+            const message = {
+                sender: messageSender,
+                text: chatInput.value,
+                timestamp,
+            }
+
+            chatMessages.innerHTML+= createChatMessageElement(message)
+            chatInputForm.reset()
+            chatMessages.scrollTop = chatMessages.scrollHeight
+        }
+        chatInputForm.addEventListener('submit', sendMessage)

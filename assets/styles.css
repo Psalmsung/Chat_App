@@ -10,6 +10,7 @@ body{
         hsl(183deg 79% 36%) 100%
     );
     height: 100vh;
+    padding: ;
 }
 
 .button{
@@ -55,9 +56,8 @@ body{
     padding: 0.5em 1.25em;
     margin: auto;
     max-width: 37.5em;
-    height: auto;
+    height: 37.5em;
     box-shadow: 0 0 1.25em 0.5em #c3c3c333;
-    position: relative;
 }
 .chat-header{
     margin-bottom: 1em;
@@ -114,12 +114,7 @@ body{
     align-items: center;
     margin-top: 2em;
     gap: 0.625em;
-    position: absolute;
-    bottom: 3em;
-    left: 2em;
-    right: 2em;
-    margin-top: 1em;
-    
+        
 }
 .chat-input{
     padding: 0.625em;
@@ -139,10 +134,7 @@ body{
 }
 
 .clear-chat-button{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 1em;
+    display: block;
+    margin: 2.5em auto;
 }
 
