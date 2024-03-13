@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
     <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-   <div class="person-selector">
-    <button class="button person-selector-button active-person" id="abuoma-selector">Abuoma</button>
-    <button class="button person-selector-button" id="psalmsung-selector">Psalmsung</button>
-   </div>
-   <div class="chat-container">
-    <h2 class="chat-header">Abuoma chatting...</h2>
 
-    <div class="chat-messages">
-        <div class="message blue-bg">
-            <div class="message-sender">Abuoma</div>
-            <div class="message-text">Hey Psalmsung, what's up?</div>
-            <div class="message-timestamp">10:30 AM</div>
-        </div>
-        <div class="message gray-bg">
-            <div class="message-sender">Psalmsung</div>
-            <div class="message-text">Not much, just living the dream. How about you?</div>
-            <div class="message-timestamp">10:35 AM</div>
+<body>
+    <div class="person-selector">
+        <button class="button person-selector-button active-person" id="abuoma-selector">Abuoma</button>
+        <button class="button person-selector-button" id="psalmsung-selector">Psalmsung</button>
+    </div>
+    <div class="chat-container">
+        <h2 class="chat-header">Abuoma chatting...</h2>
+
+        <div class="chat-messages">
+            <div class="message blue-bg">
+                <div class="message-sender">Abuoma</div>
+                <div class="message-text">Hey Psalmsung, what's up?</div>
+                <div class="message-timestamp">10:30 AM</div>
+            </div>
+            <div class="message gray-bg">
+                <div class="message-sender">Psalmsung</div>
+                <div class="message-text">Not much, just living the dream. How about you?</div>
+                <div class="message-timestamp">10:35 AM</div>
+            </div>
+
         </div>
 
         <form class="chat-input-form">
@@ -31,10 +35,11 @@
             <button type="submit" class="button send-button">Send</button>
         </form>
         <button class="button clear-chat-button">Clear Chat</button>
+
     </div>
-   </div>
 
 
     <script src="script.js"></script>
 </body>
+
 </html>
