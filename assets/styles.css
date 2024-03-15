@@ -73,6 +73,7 @@ body{
 }
 .chat-messages::-webkit-scrollbar{
     display: none;
+    padding: 0.625em;
 }
 
 .message{
